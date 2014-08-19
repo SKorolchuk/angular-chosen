@@ -43,10 +43,10 @@
           }
         });
         startLoading = function() {
-          return element.addClass('loading').attr('disabled', true).trigger('chosen:updated');
+          return element.addClass('loading').trigger('chosen:updated');
         };
         stopLoading = function() {
-          return element.removeClass('loading').attr('disabled', false).trigger('chosen:updated');
+          return element.removeClass('loading').trigger('chosen:updated');
         };
         chosen = null;
         defaultText = null;
@@ -65,7 +65,7 @@
         };
         disableWithMessage = function() {
           empty = true;
-          return element.attr('data-placeholder', chosen.results_none_found).attr('disabled', true).trigger('chosen:updated');
+          return element.attr('data-placeholder', chosen.results_none_found).trigger('chosen:updated');
         };
         if (ngModel) {
           origRender = ngModel.$render;
